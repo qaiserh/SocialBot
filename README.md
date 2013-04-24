@@ -9,7 +9,6 @@ staggering sponsored posts.
 1) Running
 2) Features
 3) Code
-----------
 
 *-*
 Since the app depends on callbacks from Facebook and twitter you can't really run it locally because the callback urls point to socialbot.herokuapp.com
