@@ -35,7 +35,7 @@ twitter = oauth.remote_app('twitter',
     consumer_secret='Nm8JvyLB4ydnfhsFkKzew4c5l4TgJioKSuIaNTsz9Y4'
 )
 
-sdb = boto.connect_sdb('AKIAII2G32EWZTZMZWNQ', 'p5ox6OoawKet32vyLqJwZrZP9GqBIdhwa/xScVsd')
+sdb = boto.connect_sdb('ENTER AWS KEY', 'ENTER AWS SECRET KEY')
 
 domain = sdb.get_domain('socialbot')
 
