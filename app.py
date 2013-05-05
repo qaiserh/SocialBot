@@ -80,8 +80,8 @@ def get_facebook_token(token=None):
 	
 @twitter.tokengetter
 def get_twitter_token(token=None):
-	 """ Function for Flask-OAuth to get twitter oauth-token for posting on twitter"""   
-	return session.get('twitter_token')
+	 """ Function for Flask-OAuth to get twitter oauth-token for posting on twitter."""   
+    return session.get('twitter_token')
 
 def pop_login_session():
 	""" Function for deleting user session"""
