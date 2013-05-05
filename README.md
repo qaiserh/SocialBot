@@ -14,11 +14,11 @@ Since the app depends on callbacks from Facebook and twitter you can't really ru
 *-*
 
 ## Running ##
-1) Running the app is simple. Go to socialbot.herokuapp.com to access it. Click on
+Running the app is simple. Go to socialbot.herokuapp.com to access it. Click on
 one of the big buttons to authenticate with either Facebook or Twitter. Then post away.
 
 ## Features ##
-2) The app allows you to schedule posts for both Twitter and Facebook. A validation
+The app allows you to schedule posts for both Twitter and Facebook. A validation
 check makes sure all tweets are under 140 characters.  We also make a validation for the 
 presence of a scheduled time. The app can post at any time in
 the future, and can queue multiple posts for Twitter and Facebook.
@@ -31,7 +31,7 @@ Once you have authorized the app with Facebook and Twitter, the app also automat
 signs you in if you are signed into both services on that computer.
 
 ## Code ##
-3) The code is divided into app.py, scheduler.py and a series of templates for the
+The code is divided into app.py, scheduler.py and a series of templates for the
 various webpages. app.py contains the methods that handle initial login and user
 authentication, as well as the methods that add tweets and statuses to the SimpleDB
 database we have set up. It also contains the edit/delete method. We maintain local dictionaries
@@ -46,5 +46,5 @@ So it posts in waves separated by 10 minutes using Heroku's Scheduler.
 We use Twitter Bootstrap for design and Jinja2 to populate the templates with data
 and interact with our python code.
 
-TODO:
+## TODO: ##
 - Add support for different timezones
