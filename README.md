@@ -29,17 +29,20 @@ before they are published, in case the user changes his/her mind.
 Once you have authorized the app with Facebook and Twitter, the app also automatically
 signs you in if you are signed into both services on that computer.
 
-3) The code is divided into hello.py, scheduler.py and a series of templates for the
-various webpages. hello.py contains the methods that handle initial login and user
+3) The code is divided into app.py, scheduler.py and a series of templates for the
+various webpages. app.py contains the methods that handle initial login and user
 authentication, as well as the methods that add tweets and statuses to the SimpleDB
 database we have set up. It also contains the edit/delete method. We maintain local dictionaries
 corresponding to the data in the database to minimize queries to the database and to
-make sure scheduled tweets display quickly.
+make sure scheduled tweets, statuses display quickly.
 
 scheduler.py contains the code responsible for posting at the scheduled times. Posting
 at the exact times would be incredibly taxing, so instead scheduler.py queries the
 database every 10 minutes, and checks if any posts were timed before the current time.
 So it posts in waves separated by 10 minutes using Heroku's Scheduler.
 
-We use twitter bootstrap for design and Jinja to populate the templates with data
+We use Twitter Bootstrap for design and Jinja2 to populate the templates with data
 and interact with our python code.
+
+TODO:
+- Add support for different timezones

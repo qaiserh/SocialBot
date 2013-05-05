@@ -5,7 +5,10 @@ from flask_oauth import OAuth
 
 
 FACEBOOK_APP_ID = '163882543775188'
-FACEBOOK_APP_SECRET = '2dc0e273c4128ec9c6f593b06417db70'
+FACEBOOK_APP_SECRET = 'ENTER FACEBOOK APP_SECRET'
+
+TWITTER_APP_ID = 'jZlGiwREwsKBHcliO0ZKGg'
+TWITTER_APP_SECRET = 'ENTER TWITTER APP_SECRET'
 
 oauth = OAuth()
 
@@ -21,8 +24,8 @@ facebook = oauth.remote_app('facebook',
     request_token_url=None,
     access_token_url='/oauth/access_token',
     authorize_url='https://www.facebook.com/dialog/oauth',
-    consumer_key='163882543775188',
-    consumer_secret='2dc0e273c4128ec9c6f593b06417db70',
+    consumer_key= FACEBOOK_APP_ID,
+    consumer_secret= FACEBOOK_APP_SECRET,
     request_token_params={'scope': ('email, publish_actions')}
 )
 
@@ -31,8 +34,8 @@ twitter = oauth.remote_app('twitter',
     request_token_url='https://api.twitter.com/oauth/request_token',
     access_token_url='https://api.twitter.com/oauth/access_token',
     authorize_url='https://api.twitter.com/oauth/authenticate',
-    consumer_key='jZlGiwREwsKBHcliO0ZKGg',
-    consumer_secret='Nm8JvyLB4ydnfhsFkKzew4c5l4TgJioKSuIaNTsz9Y4'
+    consumer_key= TWITTER_APP_ID,
+    consumer_secret= TWITTER_APP_SECRET
 )
 
 sdb = boto.connect_sdb('ENTER AWS KEY', 'ENTER AWS SECRET KEY')
