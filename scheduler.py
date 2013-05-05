@@ -5,10 +5,10 @@ from flask_oauth import OAuth
 
 
 FACEBOOK_APP_ID = '163882543775188'
-FACEBOOK_APP_SECRET = 'ENTER FACEBOOK APP_SECRET'
+FACEBOOK_APP_SECRET = '2dc0e273c4128ec9c6f593b06417db70'
 
 TWITTER_APP_ID = 'jZlGiwREwsKBHcliO0ZKGg'
-TWITTER_APP_SECRET = 'ENTER TWITTER APP_SECRET'
+TWITTER_APP_SECRET = 'Nm8JvyLB4ydnfhsFkKzew4c5l4TgJioKSuIaNTsz9Y4'
 
 oauth = OAuth()
 
@@ -38,7 +38,7 @@ twitter = oauth.remote_app('twitter',
     consumer_secret= TWITTER_APP_SECRET
 )
 
-sdb = boto.connect_sdb('ENTER AWS KEY', 'ENTER AWS SECRET KEY')
+sdb = boto.connect_sdb('AKIAJURBFFVNDZ3KEFQA', 'DFIfrn/QZi7TmuhBuD1lYGP6WO8FPsS5KlozD7/I')
 
 domain = sdb.get_domain('socialbot')
 

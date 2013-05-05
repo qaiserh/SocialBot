@@ -14,7 +14,7 @@ app.config.update(
 	DEBUG = True,
 )
 
-sdb = boto.connect_sdb('ENTER YOUR AWS ID', 'ENTER YOUR AWS SECRET KEY')
+sdb = boto.connect_sdb('AKIAJURBFFVNDZ3KEFQA', 'DFIfrn/QZi7TmuhBuD1lYGP6WO8FPsS5KlozD7/I')
 
 domain = sdb.get_domain('socialbot')
 
