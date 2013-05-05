@@ -1,22 +1,23 @@
-SocialBot
-SocialBot - Documentation
+# SocialBot #
 
 SocialBot is a webapp that lets you schedule tweets and facebook posts to be posted
 at a later date. Use it to stagger your posts so that your friends don't get
 sick of you! Or, alternatively, use it to advertise in an unobnoxious way, by
 staggering sponsored posts. 
 
-1) Running
-2) Features
-3) Code
+1. Running
+2. Features
+3. Code
 
-*-*
+
 Since the app depends on callbacks from Facebook and twitter you can't really run it locally because the callback urls point to socialbot.herokuapp.com
 *-*
 
+## Running ##
 1) Running the app is simple. Go to socialbot.herokuapp.com to access it. Click on
 one of the big buttons to authenticate with either Facebook or Twitter. Then post away.
 
+## Features ##
 2) The app allows you to schedule posts for both Twitter and Facebook. A validation
 check makes sure all tweets are under 140 characters.  We also make a validation for the 
 presence of a scheduled time. The app can post at any time in
@@ -29,6 +30,7 @@ before they are published, in case the user changes his/her mind.
 Once you have authorized the app with Facebook and Twitter, the app also automatically
 signs you in if you are signed into both services on that computer.
 
+## Code ##
 3) The code is divided into app.py, scheduler.py and a series of templates for the
 various webpages. app.py contains the methods that handle initial login and user
 authentication, as well as the methods that add tweets and statuses to the SimpleDB
