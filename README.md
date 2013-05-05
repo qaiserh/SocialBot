@@ -9,10 +9,6 @@ staggering sponsored posts.
 2. Features
 3. Code
 
-
-Since the app depends on callbacks from Facebook and twitter you can't really run it locally because the callback urls point to socialbot.herokuapp.com
-*-*
-
 ## Running ##
 Running the app is simple. Go to socialbot.herokuapp.com to access it. Click on
 one of the big buttons to authenticate with either Facebook or Twitter. Then post away.
