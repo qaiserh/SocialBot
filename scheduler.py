@@ -4,20 +4,20 @@ from flask import Flask
 from flask_oauth import OAuth
 
 
-FACEBOOK_APP_ID = '163882543775188'
-FACEBOOK_APP_SECRET = '2dc0e273c4128ec9c6f593b06417db70'
+FACEBOOK_APP_ID = os.environ['FACEBOOK_APP_ID']
+FACEBOOK_APP_SECRET = os.environ['FACEBOOK_APP_SECRET']
 
-TWITTER_APP_ID = 'jZlGiwREwsKBHcliO0ZKGg'
-TWITTER_APP_SECRET = 'Nm8JvyLB4ydnfhsFkKzew4c5l4TgJioKSuIaNTsz9Y4'
+TWITTER_APP_ID = os.environ['TWITTER_APP_ID']
+TWITTER_APP_SECRET = os.environ['TWITTER_APP_SECRET']
 
 oauth = OAuth()
 
 app = Flask(__name__)
 
 app.config.update(
-    DEBUG = True,
 )
-app.secret_key = '\xc7\xc0tj\xee\x0e-\x98n\x0bh\x00nZ\x81\x01\x83\xbe\xcdzX\xd8\x1ei'
+
+app.secret_key = os.environ['APP_SECRET_KEY']
 
 facebook = oauth.remote_app('facebook',
     base_url='https://graph.facebook.com/',
@@ -38,7 +38,7 @@ twitter = oauth.remote_app('twitter',
     consumer_secret= TWITTER_APP_SECRET
 )
 
-sdb = boto.connect_sdb('AKIAJURBFFVNDZ3KEFQA', 'DFIfrn/QZi7TmuhBuD1lYGP6WO8FPsS5KlozD7/I')
+sdb = boto.connect_sdb((os.environ['AWS_KEY'], os.environ['AWS_SECRET'])
 
 domain = sdb.get_domain('socialbot')
 
