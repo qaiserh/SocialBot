@@ -15,6 +15,9 @@ Running the app is simple. Go to socialbot.herokuapp.com to access it. Click on
 one of the big buttons to authenticate with either Facebook or Twitter. Then post away.
 
 ## Features ##
+
+A lot of emphasis was put on making the app very easy to use and minimalistic. 
+
 The app allows you to schedule posts for both Twitter and Facebook. A validation
 check makes sure all tweets are under 140 characters. The app can post at any time in
 the future, and can queue multiple posts for Twitter and Facebook.
