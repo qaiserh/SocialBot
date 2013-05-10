@@ -248,11 +248,9 @@ def edit_tweet():
 			domain.delete_item(item_iterator.next())
 		except StopIteration:
 			print "iteration stopped"
-		try:
-			tweets[session['twitter_user']].remove((request.form['oldmessage'], request.form['t'], time_formatter(request.form['t'])))
-		except ValueError:
-			item_iterator = domain.select("select * from socialbot where user_id = '" + session['twitter_user'] + "'")
-			tweets[session['twitter_user']] = get_entries(item_iterator)
+			
+		item_iterator = domain.select("select * from socialbot where user_id = '" + session['twitter_user'] + "'", consistent_read = True)
+		tweets[session['twitter_user']] = get_entries(item_iterator)
 		return render_template('post_tweet.html', message = "Deleted successfully.", db = tweets[session['twitter_user']])
 
 	elif button == 'edit':
@@ -263,12 +261,9 @@ def edit_tweet():
 			domain.put_attributes(item.name, attributes)
 		except StopIteration:
 			print "iteration stopped"
-		try:
-			tweets[session['twitter_user']].remove((request.form['oldmessage'], request.form['t'], time_formatter(request.form['t'])))
-			tweets[session['twitter_user']].append((request.form['editmessage'], request.form['t'], time_formatter(request.form['t'])))
-		except ValueError:
-			item_iterator = domain.select("select * from socialbot where user_id = '" + session['twitter_user'] + "'")
-			tweets[session['twitter_user']] = get_entries(item_iterator)
+
+		item_iterator = domain.select("select * from socialbot where user_id = '" + session['twitter_user'] + "'", consistent_read = True)
+		tweets[session['twitter_user']] = get_entries(item_iterator)
 	return render_template('post_tweet.html', message = "Edited successfully.", db = tweets[session['twitter_user']])
 
 @app.route("/edit_status", methods=['GET', 'POST'])
@@ -284,11 +279,9 @@ def edit_status():
 			domain.delete_item(item_iterator.next())
 		except StopIteration:
 			print "iteration stopped"
-		try:
-			statuses[session['facebook_user']].remove((request.form['oldmessage'], request.form['t'], time_formatter(request.form['t'])))
-		except ValueError:
-			item_iterator = domain.select("select * from socialbot where user_id = '" + session['facebook_user'] + "'")
-			statuses[session['facebook_user']] = get_entries(item_iterator)
+
+		item_iterator = domain.select("select * from socialbot where user_id = '" + session['facebook_user'] + "'", consistent_read = True)
+		statuses[session['facebook_user']] = get_entries(item_iterator)
 		return render_template('post_status.html', message = "Deleted successfully.", db = statuses[session['facebook_user']])
 
 	elif button == 'edit':
